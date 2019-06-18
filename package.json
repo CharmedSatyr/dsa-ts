@@ -1,0 +1,58 @@
+{
+  "name": "dsa",
+  "version": "0.0.1",
+  "description": "Common data structures and algorithms implemented in TypeScript",
+  "engines": {
+    "node": "^11.8.0",
+    "npm": "^6.9.0"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "watch": "nodemon --config './nodemon.json'",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --coverage --verbose --watch",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --language typescript --token null",
+    "lint": "tslint -c './tslint.json' 'src/**/*.{ts,tsx}'",
+    "build": "rm -rf 'build'; tsc -b; npm run doc",
+    "doc": "rm -rf 'docs/*'; npx typedoc --mode 'file' --out 'docs/'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharmedSatyr/dsa.git"
+  },
+  "keywords": [],
+  "author": "CharmedSatyr <z@charmed.tech>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/CharmedSatyr/dsa/issues"
+  },
+  "homepage": "https://github.com/CharmedSatyr/dsa#readme",
+  "devDependencies": {
+    "@types/faker": "^4.1.5",
+    "@types/jest": "^24.0.15",
+    "codacy-coverage": "^3.4.0",
+    "faker": "^4.1.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "export CI=true && npm run build && lint-staged && npm run test",
+      "pre-push": "export CI=true && npm run build && lint-staged && npm run coverage"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint -c './tslint.json'"
+    ]
+  }
+}
