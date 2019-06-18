@@ -11,7 +11,7 @@
     "watch": "nodemon --config './nodemon.json'",
     "test": "jest --coverage --verbose",
     "test-watch": "jest --coverage --verbose --watch",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --language typescript --token null",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --language typescript --token 92c380fbef27483bbcc1e3a2e76b6d5f",
     "lint": "tslint -c './tslint.json' 'src/**/*.{ts,tsx}'",
     "build": "rm -rf 'build'; tsc -b; npm run doc",
     "doc": "rm -rf 'docs/*'; npx typedoc --mode 'file' --out 'docs/'"

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPerson | dsa</title>
+	<title>Node | dsa</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,37 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="iperson.html">IPerson</a>
+					<a href="node.html">Node</a>
 				</li>
 			</ul>
-			<h1>Interface IPerson</h1>
+			<h1>Class Node</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A simple node
+							Other properties could be assigned to track with potential
+							use cases, but this implementation is clean and useful in
+							many data structures. It might be modified in the future to
+						add properties like <code>next</code>.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>class</dt>
+						<dd><p>Node</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPerson</span>
+						<span class="target">Node</span>
 					</li>
 				</ul>
 			</section>
@@ -78,35 +94,56 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="node.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="iperson.html#firstname" class="tsd-kind-icon">first<wbr>Name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="iperson.html#lastname" class="tsd-kind-icon">last<wbr>Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="node.html#data" class="tsd-kind-icon">data</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="firstname" class="tsd-anchor"></a>
-					<h3>first<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">first<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in tacker.ts:23</li>
-						</ul>
-					</aside>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Node<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="node.html" class="tsd-signature-type">Node</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node.ts:11</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> data: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="node.html" class="tsd-signature-type">Node</a></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="lastname" class="tsd-anchor"></a>
-					<h3>last<wbr>Name</h3>
-					<div class="tsd-signature tsd-kind-icon">last<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="data" class="tsd-anchor"></a>
+					<h3>data</h3>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in tacker.ts:24</li>
+							<li>Defined in node.ts:11</li>
 						</ul>
 					</aside>
 				</section>
@@ -122,30 +159,21 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="../classes/student.html" class="tsd-kind-icon">Student</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-is-not-exported">
-						<a href="iperson.html" class="tsd-kind-icon">IPerson</a>
+					<li class="current tsd-kind-class">
+						<a href="node.html" class="tsd-kind-icon">Node</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="iperson.html#firstname" class="tsd-kind-icon">first<wbr>Name</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="node.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="iperson.html#lastname" class="tsd-kind-icon">last<wbr>Name</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="node.html#data" class="tsd-kind-icon">data</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="../globals.html#user" class="tsd-kind-icon">user</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#greeter" class="tsd-kind-icon">greeter</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
