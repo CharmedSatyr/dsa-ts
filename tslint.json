@@ -3,7 +3,7 @@
   "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
     "interface-name": true,
-    "no-console": true,
+    "no-console": false,
     "prettier": [true, "./.prettierrc.js"]
   }
 }
