@@ -3,7 +3,7 @@ import Node from './node';
 import { TData, TEntry } from './declarations/types';
 
 /**
- * A standalone Quee with a `front` and `back`. It can be instantitated with a `Node` instance.
+ * A standalone Queue with a `front` and `back`. It can be instantitated with a `Node` instance.
  * It can `enqueue`, `dequeue`, and `peek`.
  *
  * @class Queue
@@ -23,7 +23,7 @@ class Queue {
   /**
    * Add a node to the queue
    *
-   * @param data Instantiates a node with the given data at the front of the queue
+   * @param data Instantiates a node with the given data at the back of the queue
    * @memberof Queue
    */
   public enqueue(data: TData): void {
@@ -47,7 +47,7 @@ class Queue {
   public dequeue() {
     const current: TEntry = this.front;
 
-    if (!current || current.data === undefined || current.data === null) {
+    if (!current) {
       return null;
     }
 
@@ -63,6 +63,7 @@ class Queue {
 
     const { data }: TData = current;
     this.front = current.next;
+
     return data;
   }
 
