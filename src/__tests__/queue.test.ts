@@ -53,6 +53,12 @@ describe('Queue', () => {
   });
 
   describe('`dequeue` method', () => {
+    it('should return `null` when dequeueing an empty queue', () => {
+      const q: Queue = new Queue();
+      const result: TEntry = q.dequeue();
+      expect(result).toBeNull();
+    });
+
     it('can dequeue the front node', () => {
       const a: TAN = alphaNumeric();
       const q: Queue = new Queue(a);
@@ -72,12 +78,6 @@ describe('Queue', () => {
       expect(q.dequeue()).toBe(a);
       expect(q.dequeue()).toBe(b);
       expect(q.peek()).toBeNull();
-    });
-
-    it('should return `null` when dequeueing an empty queue', () => {
-      const q: Queue = new Queue();
-      const result: TEntry = q.dequeue();
-      expect(result).toBeNull();
     });
   });
 
