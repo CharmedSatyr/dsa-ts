@@ -3,8 +3,7 @@ import Node from './node';
 import { TData, TEntry } from './declarations/types';
 
 /**
- * A standalone Queue with a `front` and `back`. It can be instantitated with a `Node` instance.
- * It can `enqueue`, `dequeue`, and `peek`.
+ * A standalone Queue with a `front` and `back`. It can be instantitated with node `data`.
  *
  * @class Queue
  */
@@ -21,9 +20,9 @@ class Queue {
   }
 
   /**
-   * Add a node to the queue
+   * Add a node to the back of the queue
    *
-   * @param data Instantiates a node with the given data at the back of the queue
+   * @param data The new node will have the given data
    * @memberof Queue
    */
   public enqueue(data: TData): void {
