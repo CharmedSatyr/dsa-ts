@@ -71,7 +71,9 @@ class BinaryTree {
     }
 
     let current: TEntry = root;
-    const q: Queue = new Queue(current);
+    const q: Queue = new Queue();
+    q.enqueue(current);
+
     const data: TData = [];
 
     while (q.peek()) {
