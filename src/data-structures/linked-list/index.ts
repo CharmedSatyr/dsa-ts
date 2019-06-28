@@ -1,5 +1,5 @@
-import { INode } from '../declarations/interfaces';
-import { TData, TEntry } from '../declarations/types';
+import { INode } from '../../declarations/interfaces';
+import { TData, TEntry } from '../../declarations/types';
 
 import Node from '../node';
 

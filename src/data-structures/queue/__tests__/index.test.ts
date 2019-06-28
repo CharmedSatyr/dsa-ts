@@ -1,7 +1,8 @@
 import { random } from 'faker';
 
-import { TAN, TEntry } from '../declarations/types';
-import Queue from '../queue';
+import { TAN, TEntry } from '../../../declarations/types';
+
+import Queue from '../';
 
 const { alphaNumeric } = random;
 

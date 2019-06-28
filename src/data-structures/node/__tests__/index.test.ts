@@ -1,8 +1,10 @@
-import { INode } from '../declarations/interfaces';
-import { TAN } from '../declarations/types';
-import Node from '../node';
-
 import { random } from 'faker';
+
+import { INode } from '../../../declarations/interfaces';
+import { TAN } from '../../../declarations/types';
+
+import Node from '../';
+
 const { alphaNumeric } = random;
 
 describe('`Node` class', () => {

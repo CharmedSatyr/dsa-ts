@@ -1,6 +1,7 @@
-import { INode } from './declarations/interfaces';
-import { TData, TEntry } from './declarations/types';
-import Node from './node';
+import { INode } from '../../declarations/interfaces';
+import { TData, TEntry } from '../../declarations/types';
+
+import Node from '../node';
 
 /**
  * A standalone stack with a `top`. It can push, pop, and print.

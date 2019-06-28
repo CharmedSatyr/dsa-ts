@@ -1,6 +1,6 @@
-import Node from './node';
+import Node from '../node';
 
-import { TData, TEntry } from './declarations/types';
+import { TData, TEntry } from '../../declarations/types';
 
 /**
  * A standalone Queue with a `front` and `back`. It can be instantitated with node `data`.
