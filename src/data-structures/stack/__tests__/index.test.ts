@@ -63,6 +63,7 @@ describe('Stack', () => {
       stack.push(c);
 
       const result: TEntry = stack.pop();
+
       expect(result && result.data).toBe(c);
     });
 
@@ -86,6 +87,7 @@ describe('Stack', () => {
       const stack: Stack = new Stack();
       const result: TData[] = stack.print();
       const expected: undefined[] = [];
+
       expect(result).toEqual(expected);
     });
 
@@ -111,6 +113,7 @@ describe('Stack', () => {
 
     it('should log all values in the stack in LIFO order', () => {
       log.mockClear();
+
       const stack: Stack = new Stack();
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
@@ -123,10 +126,10 @@ describe('Stack', () => {
       stack.push(c);
       stack.push(d);
       stack.push(e);
-
       stack.print();
 
       const expected: TAN[] = [e, d, c, b, a];
+
       expect(log).toHaveBeenCalledWith(expected);
 
       log.mockClear();
