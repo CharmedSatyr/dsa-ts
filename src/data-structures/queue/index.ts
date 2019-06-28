@@ -3,20 +3,17 @@ import Node from '../node';
 import { TData, TEntry } from '../../declarations/types';
 
 /**
- * A standalone Queue with a `front` and `back`. It can be instantitated with node `data`.
+ * A standalone Queue with a `front` and `back`.
  *
  * @class Queue
  */
 class Queue {
   public front: TEntry;
   public back: TEntry;
-  constructor(data?: TData) {
-    let node: TEntry = null;
-    if (data) {
-      node = new Node(data);
-    }
-    this.front = node;
-    this.back = node;
+  constructor() {
+    /** Queues are instantiated with `null` values for `front` and `back` properties. */
+    this.front = null;
+    this.back = null;
   }
 
   /**
