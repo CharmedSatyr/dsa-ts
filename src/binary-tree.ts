@@ -10,9 +10,10 @@ import Queue from './queue';
 class BinaryTree {
   public root: TEntry;
   constructor(data?: TEntry) {
-    this.root = null;
-    if (data) {
+    if (data !== null && data !== undefined) {
       this.root = new Node(data);
+    } else {
+      this.root = null;
     }
   }
 
