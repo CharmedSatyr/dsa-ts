@@ -7,8 +7,6 @@
     "npm": "^6.9.0"
   },
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "watch": "nodemon --config './nodemon.json'",
     "test": "jest --coverage --verbose",
     "test-watch": "jest --coverage --verbose --watch",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --language typescript --token 92c380fbef27483bbcc1e3a2e76b6d5f",

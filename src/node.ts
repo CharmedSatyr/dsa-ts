@@ -10,7 +10,13 @@ class Node {
   public next?: TEntry;
   public left?: TEntry;
   public right?: TEntry;
-  constructor(data: TData = null) {
+  constructor(data: TData) {
+    if (data === null || data === undefined) {
+      throw new Error(
+        `Error on Node: initialization data cannot be 'null' or 'undefined'. Argument provided: ${data}`
+      );
+    }
+
     this.data = data;
 
     // Stack/Queue

@@ -77,8 +77,7 @@ describe('`BinaryTree` class', () => {
   describe('`findMaximumValue` method', () => {
     it('returns `null` if the `root.data` is `undefined`', () => {
       const bt: BinaryTree = new BinaryTree();
-      const root = new Node();
-      const result: null | number = bt.findMaximumValue(root);
+      const result: null | number = bt.findMaximumValue(bt.root);
       expect(result).toBeNull();
     });
 
