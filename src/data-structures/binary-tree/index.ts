@@ -1,6 +1,7 @@
-import { TData, TEntry } from './declarations/types';
-import Node from './node';
-import Queue from './queue';
+import { TData, TEntry } from '../../declarations/types';
+
+import Node from '../node';
+import Queue from '../queue';
 
 /**
  * A Binary Tree with a `root`. It can be instantitated with Node `data`.

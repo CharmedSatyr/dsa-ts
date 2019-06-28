@@ -1,4 +1,4 @@
-import { TData, TEntry } from './declarations/types';
+import { TData, TEntry } from '../../declarations/types';
 
 /**
  * A simple node that can be used in multiple data structures.

@@ -1,7 +1,7 @@
 import { random } from 'faker';
 
-import { INode } from '../../declarations/interfaces';
-import { TAN } from '../../declarations/types';
+import { INode } from '../../../declarations/interfaces';
+import { TAN } from '../../../declarations/types';
 
 import LinkedList from '../';
 import Node from '../../node';

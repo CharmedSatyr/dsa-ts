@@ -1,10 +1,10 @@
 import { random } from 'faker';
 
-import { notEqual } from 'assert';
-import BinaryTree from '../binary-tree';
-import { INode } from '../declarations/interfaces';
-import { TAN, TEntry } from '../declarations/types';
-import Node from '../node';
+import { INode } from '../../../declarations/interfaces';
+import { TAN, TEntry } from '../../../declarations/types';
+
+import BinaryTree from '../';
+import Node from '../../node';
 
 const { alphaNumeric } = random;
 
