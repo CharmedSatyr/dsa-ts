@@ -4,18 +4,14 @@ import Node from '../node';
 import Queue from '../queue';
 
 /**
- * A Binary Tree with a `root`. It can be instantitated with Node `data`.
+ * A Binary Tree with a `root`.
  *
  * @class BinaryTree
  */
 class BinaryTree {
   public root: TEntry;
-  constructor(data?: TEntry) {
-    if (data !== null && data !== undefined) {
-      this.root = new Node(data);
-    } else {
-      this.root = null;
-    }
+  constructor() {
+    this.root = null;
   }
 
   /**
@@ -75,7 +71,9 @@ class BinaryTree {
     }
 
     let current: TEntry = root;
-    const q: Queue = new Queue(current);
+    const q: Queue = new Queue();
+    q.enqueue(current);
+
     const data: TData = [];
 
     while (q.peek()) {

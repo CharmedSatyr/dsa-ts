@@ -12,13 +12,17 @@ describe('`LinkedList` class', () => {
   describe('`LinkedList` class instantiation', () => {
     it('can successfully instantiate an empty linked list', () => {
       const ll: LinkedList = new LinkedList();
+
       expect(ll).toBeDefined();
       expect(ll.head).toBeNull();
     });
 
     it('can successfully instantiate a linked list with `data`', () => {
+      const ll: LinkedList = new LinkedList();
       const data: TAN = alphaNumeric();
-      const ll: LinkedList = new LinkedList(data);
+
+      ll.append(data);
+
       expect(ll.head.data).toBe(data);
     });
   });
@@ -26,14 +30,19 @@ describe('`LinkedList` class', () => {
   describe('`insert` method', () => {
     it('can properly insert into the linked list', () => {
       const ll: LinkedList = new LinkedList();
-      ll.insert('a');
+      const a: TAN = alphaNumeric();
+
+      ll.insert(a);
+
       expect(ll.head).toBeInstanceOf(Node);
     });
 
     it('The head property will properly point to the first node in the linked list', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
+
       ll.insert(a);
+
       expect(ll.head.data).toBe(a);
     });
 
@@ -42,9 +51,11 @@ describe('`LinkedList` class', () => {
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
+
       ll.insert(a);
       ll.insert(b);
       ll.insert(c);
+
       expect(ll.head.data).toBe(c);
       expect(ll.head.next.data).toBe(b);
       expect(ll.head.next.next.data).toBe(a);
@@ -55,8 +66,11 @@ describe('`LinkedList` class', () => {
     it('Will return true when finding a value within the linked list that exists', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
+
       ll.insert(a);
+
       const bool: boolean = ll.includes(a);
+
       expect(bool).toBeTruthy();
     });
 
@@ -64,8 +78,11 @@ describe('`LinkedList` class', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
       const c: TAN = word();
+
       ll.insert(a);
+
       const bool: boolean = ll.includes(c);
+
       expect(bool).toBeFalsy();
     });
 
@@ -74,10 +91,13 @@ describe('`LinkedList` class', () => {
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
+
       ll.insert(a);
       ll.insert(b);
       ll.insert(c);
+
       const collection: string[] = ll.print();
+
       expect(collection).toBeDefined();
       expect(collection).toEqual([c, b, a]);
     });
@@ -87,7 +107,9 @@ describe('`LinkedList` class', () => {
     it('can successfuly add a node to the end of an empty linked list', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
+
       ll.append(a);
+
       expect(ll.head.data).toBe(a);
     });
 
@@ -96,6 +118,7 @@ describe('`LinkedList` class', () => {
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
+
       ll.insert(a);
       ll.insert(b);
       ll.append(c);
@@ -104,6 +127,7 @@ describe('`LinkedList` class', () => {
       while (currentNode.next !== null) {
         currentNode = currentNode.next;
       }
+
       expect(currentNode.data).toBe(c);
     });
 
@@ -112,35 +136,40 @@ describe('`LinkedList` class', () => {
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
+
       ll.insert(b);
       ll.insert(a);
       ll.append(c);
 
       let currentNode: INode = ll.head;
+
       expect(currentNode.next.data).toBe(b);
 
       currentNode = ll.head.next;
+
       expect(currentNode.next.data).toBe(c);
     });
   });
 
   describe('`insertBefore` method', () => {
     it('can successfully insert a node before a node located in the middle of a linked list', () => {
+      const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
       const d: TAN = alphaNumeric();
 
-      const ll: LinkedList = new LinkedList(a);
+      ll.append(a);
       ll.append(b);
       ll.append(d);
-
       ll.insertBefore(d, c);
 
       const middle: INode = ll.head.next;
+
       expect(middle.data).toBe(b);
 
       const next: INode = middle.next;
+
       expect(next.data).toBe(c);
     });
 
@@ -148,8 +177,10 @@ describe('`LinkedList` class', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
+
       ll.insert(b);
       ll.insertBefore(b, a);
+
       expect(ll.head.data).toBe(a);
     });
   });
@@ -180,32 +211,35 @@ describe('`LinkedList` class', () => {
     });
 
     it('throws an error if the given `data` does not exist in the linked list', () => {
+      const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
-      const ll: LinkedList = new LinkedList(a);
-
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
+
+      ll.append(a);
 
       expect(() => ll.insertAfter(b, c)).toThrow();
     });
 
     it('can insert after a node after the beginning of the linked list', () => {
+      const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
 
-      const ll: LinkedList = new LinkedList(a);
+      ll.append(a);
       ll.insertAfter(a, b);
 
       const head: INode = ll.head;
+
       expect(head.data).toBe(a);
 
       const next: INode = head.next;
+
       expect(next.data).toBe(b);
     });
 
     it('can insert after a node in the middle of the linked list', () => {
       const ll: LinkedList = new LinkedList();
-
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
       const c: TAN = alphaNumeric();
@@ -221,10 +255,10 @@ describe('`LinkedList` class', () => {
       // e missing
       ll.append(f);
       ll.append(g);
-
       ll.insertAfter(d, e);
 
       const middle = ll.head.next.next.next.next;
+
       expect(middle.data).toBe(e);
     });
 
@@ -232,15 +266,19 @@ describe('`LinkedList` class', () => {
       const ll: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
       const b: TAN = alphaNumeric();
+
       ll.insert(a);
       ll.insertAfter(a, b);
+
       const last = ll.head.next;
+
       expect(last.data).toBe(b);
     });
   });
 
   describe('`kthFromEnd` method', () => {
     const ll: LinkedList = new LinkedList();
+
     ll.append(1);
     ll.append(3);
     ll.append(8);
@@ -261,7 +299,9 @@ describe('`LinkedList` class', () => {
     it('should return a value where the linked list is of a size 1', () => {
       const nl: LinkedList = new LinkedList();
       const a: TAN = alphaNumeric();
+
       nl.append(a);
+
       expect(nl.kthFromEnd(0)).toBe(a);
     });
 

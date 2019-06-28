@@ -14,15 +14,6 @@ describe('`BinaryTree` class', () => {
     expect(bt).toBeDefined();
   });
 
-  it('Can successfully instantiate a tree with a single root node', () => {
-    const data: TAN = alphaNumeric();
-
-    const bt: BinaryTree = new BinaryTree(data);
-    expect(bt).toBeDefined();
-
-    expect.assertions(1);
-  });
-
   describe('`add` method', () => {
     it('can successfully add left and right children in a balanced way', () => {
       /***
@@ -35,8 +26,10 @@ describe('`BinaryTree` class', () => {
        *   /
        *4 h
        ***/
+      const bt: BinaryTree = new BinaryTree();
       const a: TAN = alphaNumeric();
-      const bt: BinaryTree = new BinaryTree(a);
+      bt.add(a);
+
       expect(bt.root.data).toBe(a);
 
       const b: TAN = alphaNumeric();
@@ -107,8 +100,9 @@ describe('`BinaryTree` class', () => {
     it('returns a collection if given a single node', () => {
       const bt1: BinaryTree = new BinaryTree();
 
+      const bt2: BinaryTree = new BinaryTree();
       const data: TAN = alphaNumeric();
-      const bt2: BinaryTree = new BinaryTree(data);
+      bt2.add(data);
 
       const expected: TAN[] = [data];
       expect(bt1.breadthFirstOrder(bt2.root)).toEqual(expected);
@@ -143,8 +137,9 @@ describe('`BinaryTree` class', () => {
     it('returns a preorder collection if given a node', () => {
       const bt1: BinaryTree = new BinaryTree();
 
+      const bt2: BinaryTree = new BinaryTree();
       const data: TAN = alphaNumeric();
-      const bt2: BinaryTree = new BinaryTree(data);
+      bt2.add(data);
 
       const expected: TAN[] = [data];
       expect(bt1.preOrder(bt2.root)).toEqual(expected);
@@ -158,7 +153,8 @@ describe('`BinaryTree` class', () => {
       const e: TAN = alphaNumeric();
       const f: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       expect(bt.preOrder()).toEqual([a, b, c]);
@@ -185,7 +181,8 @@ describe('`BinaryTree` class', () => {
       const f: TAN = alphaNumeric();
       const g: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       expect(bt.inOrder()).toEqual([b, a, c]);
@@ -213,7 +210,8 @@ describe('`BinaryTree` class', () => {
       const f: TAN = alphaNumeric();
       const g: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       expect(bt.postOrder()).toEqual([b, c, a]);
@@ -233,8 +231,9 @@ describe('`BinaryTree` class', () => {
     });
 
     it('should return `1` if the root has no children', () => {
+      const bt: BinaryTree = new BinaryTree();
       const a: TAN = alphaNumeric();
-      const bt: BinaryTree = new BinaryTree(a);
+      bt.add(a);
 
       expect(bt.getHeight()).toBe(1);
     });
@@ -259,7 +258,8 @@ describe('`BinaryTree` class', () => {
       const g: TAN = alphaNumeric();
       const h: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       bt.add(d);
@@ -288,7 +288,8 @@ describe('`BinaryTree` class', () => {
       const f: TAN = alphaNumeric();
       const g: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       bt.add(d);
@@ -319,7 +320,8 @@ describe('`BinaryTree` class', () => {
       const g: TAN = alphaNumeric();
       const h: TAN = alphaNumeric();
 
-      const bt: BinaryTree = new BinaryTree(a);
+      const bt: BinaryTree = new BinaryTree();
+      bt.add(a);
       bt.add(b);
       bt.add(c);
       bt.add(d);

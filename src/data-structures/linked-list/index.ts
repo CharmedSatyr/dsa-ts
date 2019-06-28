@@ -4,19 +4,11 @@ import { TData, TEntry } from '../../declarations/types';
 import Node from '../node';
 
 class LinkedList {
-  /** The LinkedList class includes a head property. */
+  /** The LinkedList class includes a head property that can be a node or `null`. */
   public head: TEntry;
-  constructor(data?: TData) {
-    /**
-     * The linked list can be instantiated with `data` used
-     * to create a node or can default to an empty value.
-     * Either value will be assigned to `head`.
-     */
-    if (data !== null && data !== undefined) {
-      this.head = new Node(data);
-    } else {
-      this.head = null;
-    }
+  constructor() {
+    /** A linked list is instantiated with a `head` that has a `null` value.  */
+    this.head = null;
   }
 
   /** Add a new node with the given value to the end of the list */
