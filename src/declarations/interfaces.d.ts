@@ -7,3 +7,8 @@ export interface INode {
   left?: TEntry;
   right?: TEntry;
 }
+
+export interface ISetPivot {
+  arr: number[];
+  pivot: number;
+}
