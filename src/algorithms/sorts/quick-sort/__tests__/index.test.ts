@@ -1,8 +1,10 @@
 import { random } from 'faker';
 
-import { ISetPivot } from '../../../declarations/interfaces';
+import { ISetPivot } from '../../../../declarations/interfaces';
 
 import quickSort, { setPivot } from '../';
+
+import isSorted from '../../is-sorted';
 
 const randNum = random.number;
 
@@ -47,16 +49,6 @@ describe('setPivot', () => {
 
 describe('quickSort', () => {
   it('should sort a randomly generated unsorted array', () => {
-    // Helper function
-    const isSorted = (array: number[]): boolean => {
-      for (let i: number = 0; i < array.length - 1; i++) {
-        if (array[i] > array[i + 1]) {
-          return false;
-        }
-      }
-      return true;
-    };
-
     const arr: number[] = [
       randNum(),
       randNum(),
